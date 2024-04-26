@@ -176,21 +176,41 @@ using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using Azure.Storage.Blobs;
 using NAudio.Wave;
+using static System.Net.WebRequestMethods;
+using System.Diagnostics;
 #endregion
 
 class Program
 {
     static async Task Main(string[] args)
     {
+        string ffmpegPath = @"C:\Users\jona2\source\repos\azureTra\azureTra\tp\FFmpeg\bin\ffmpeg.exe";
         var speechConfig = SpeechConfig.FromSubscription("5a8f54eafc074fe9a92944d3734e748f", "eastus");
+
         speechConfig.SpeechRecognitionLanguage = "es-MX";
         // Nombre del archivo en el blogstorage
         string audioBlobName = "0024cabf-5038-463f-bd2c-347d198a4329.avi";
+        string audioSalida = "supervision/0024cabf-5038-463f-bd2c-347d198a4329.mp4";
         string transcriptionFilePath = @"C:\Users\jona2\Downloads\Prueba.txt";
 
-        // Obtener el archivo de audio del blogstorage
-        string audioFilePath = await DownloadAudioFromBlobStorage(audioBlobName);
+        string arguments = $"-i \"{audioBlobName}\" -c:v libx264 -c:a aac -strict experimental \"{audioSalida}\"";
+        ProcessStartInfo processStartInfo = new ProcessStartInfo
+        {
+            FileName = ffmpegPath,
+            Arguments = arguments,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true
+        };
 
+        Process process = new Process();
+        process.StartInfo = processStartInfo;
+        process.Start();
+
+        // Obtener el archivo de audio del blogstorage
+        string audioFilePath = await DownloadAudioFromBlobStorage(audioSalida);
+        
         // Convertimos archivo de audio a WAV si es necesario
         string wavFilePath = ConvertToWav(audioFilePath);
 
