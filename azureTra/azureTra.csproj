@@ -133,6 +133,52 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="tp\FFmpeg\LICENSE" />
+    <None Include="tp\FFmpeg\presets\libvpx-1080p.ffpreset" />
+    <None Include="tp\FFmpeg\presets\libvpx-1080p50_60.ffpreset" />
+    <None Include="tp\FFmpeg\presets\libvpx-360p.ffpreset" />
+    <None Include="tp\FFmpeg\presets\libvpx-720p.ffpreset" />
+    <None Include="tp\FFmpeg\presets\libvpx-720p50_60.ffpreset" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tp\FFmpeg\bin\ffmpeg.exe" />
+    <Content Include="tp\FFmpeg\bin\ffplay.exe" />
+    <Content Include="tp\FFmpeg\bin\ffprobe.exe" />
+    <Content Include="tp\FFmpeg\doc\bootstrap.min.css" />
+    <Content Include="tp\FFmpeg\doc\community.html" />
+    <Content Include="tp\FFmpeg\doc\default.css" />
+    <Content Include="tp\FFmpeg\doc\developer.html" />
+    <Content Include="tp\FFmpeg\doc\faq.html" />
+    <Content Include="tp\FFmpeg\doc\fate.html" />
+    <Content Include="tp\FFmpeg\doc\ffmpeg-all.html" />
+    <Content Include="tp\FFmpeg\doc\ffmpeg-bitstream-filters.html" />
+    <Content Include="tp\FFmpeg\doc\ffmpeg-codecs.html" />
+    <Content Include="tp\FFmpeg\doc\ffmpeg-devices.html" />
+    <Content Include="tp\FFmpeg\doc\ffmpeg-filters.html" />
+    <Content Include="tp\FFmpeg\doc\ffmpeg-formats.html" />
+    <Content Include="tp\FFmpeg\doc\ffmpeg-protocols.html" />
+    <Content Include="tp\FFmpeg\doc\ffmpeg-resampler.html" />
+    <Content Include="tp\FFmpeg\doc\ffmpeg-scaler.html" />
+    <Content Include="tp\FFmpeg\doc\ffmpeg-utils.html" />
+    <Content Include="tp\FFmpeg\doc\ffmpeg.html" />
+    <Content Include="tp\FFmpeg\doc\ffplay-all.html" />
+    <Content Include="tp\FFmpeg\doc\ffplay.html" />
+    <Content Include="tp\FFmpeg\doc\ffprobe-all.html" />
+    <Content Include="tp\FFmpeg\doc\ffprobe.html" />
+    <Content Include="tp\FFmpeg\doc\general.html" />
+    <Content Include="tp\FFmpeg\doc\git-howto.html" />
+    <Content Include="tp\FFmpeg\doc\libavcodec.html" />
+    <Content Include="tp\FFmpeg\doc\libavdevice.html" />
+    <Content Include="tp\FFmpeg\doc\libavfilter.html" />
+    <Content Include="tp\FFmpeg\doc\libavformat.html" />
+    <Content Include="tp\FFmpeg\doc\libavutil.html" />
+    <Content Include="tp\FFmpeg\doc\libswresample.html" />
+    <Content Include="tp\FFmpeg\doc\libswscale.html" />
+    <Content Include="tp\FFmpeg\doc\mailing-list-faq.html" />
+    <Content Include="tp\FFmpeg\doc\nut.html" />
+    <Content Include="tp\FFmpeg\doc\platform.html" />
+    <Content Include="tp\FFmpeg\doc\style.min.css" />
+    <Content Include="tp\FFmpeg\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.CognitiveServices.Speech.1.37.0\build\net462\Microsoft.CognitiveServices.Speech.targets" Condition="Exists('..\packages\Microsoft.CognitiveServices.Speech.1.37.0\build\net462\Microsoft.CognitiveServices.Speech.targets')" />
